@@ -1,9 +1,7 @@
 var triangleType = function(un, deux, trois) {
 
   var sideAry = [un, deux, trois]
-  sideAry = sideAry.sort(function (a, b) {
-    return b - a;
-  });
+
   var equalCount = 0;
 
   if (sideAry[0] > (sideAry[1] + sideAry[2])) {
@@ -52,6 +50,12 @@ $(document).ready(function() {
 
     var sides = [sideA, sideB, sideC]
 
+    sides = sides.sort(function (a, b) {
+      return b - a;
+    });
+
+
+
     if ((sideA < 1 ) || (sideB < 1 ) || (sideC < 1 )) {
       alert("What you are doing is illegal and we won't allow it.");
       return false;
@@ -63,9 +67,7 @@ $(document).ready(function() {
 
 
     $("#results").append(result);
-
-
-
+    
     event.preventDefault();
   });
 });
