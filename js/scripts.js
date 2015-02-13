@@ -39,3 +39,33 @@ var triangleType = function(un, deux, trois) {
 
 
 }
+
+
+
+$(document).ready(function() {
+  $("form#sideForm").submit(function(event) {
+
+
+    var sideA = parseInt($("input#sideA").val());
+    var sideB = parseInt($("input#sideB").val());
+    var sideC = parseInt($("input#sideC").val());
+
+    var sides = [sideA, sideB, sideC]
+
+    if ((sideA < 1 ) || (sideB < 1 ) || (sideC < 1 )) {
+      alert("What you are doing is illegal and we won't allow it.");
+      return false;
+    }
+
+    var result = triangleType(sideA, sideB, sideC);
+
+    $("#results").empty();
+
+
+    $("#results").append(result);
+
+
+
+    event.preventDefault();
+  });
+});
