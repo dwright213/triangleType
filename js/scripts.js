@@ -4,10 +4,13 @@ var triangleType = function(un, deux, trois) {
   sideAry = sideAry.sort(function (a, b) {
     return b - a;
   });
-
   var equalCount = 0;
 
-  if ((un === deux) && (deux === trois)) {
+  if (sideAry[0] > (sideAry[1] + sideAry[2])) {
+    return "invalid"
+  }
+
+  else if ((un === deux) && (deux === trois)) {
     return "equilateral"
 
   }
@@ -28,7 +31,7 @@ var triangleType = function(un, deux, trois) {
 
     } else {
       return "scalene"
-      
+
     }
 
 

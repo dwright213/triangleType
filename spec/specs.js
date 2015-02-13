@@ -12,4 +12,8 @@ describe('triangleType', function() {
     expect(triangleType(1, 2, 3)).to.eql("scalene");
   });
 
+  it("returns invalid if side lengths can't add up to an actual honest to goodness triangle ", function() {
+    expect(triangleType(1, 988, 3)).to.eql("invalid");
+  });
+
 });
